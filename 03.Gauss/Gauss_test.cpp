@@ -9,7 +9,7 @@ TEST(GaussSolve, Solve2x2)
     // 2x + y = 5
     // x - y = 1
     ab << 2.0,  1.0, 5.0,
-          1.0, -1.0, 1.0;
+    1.0, -1.0, 1.0;
 
     GaussVector x = Gauss_solve(ab);
 
@@ -26,8 +26,8 @@ TEST(GaussSolve, Solve3x3)
     // -2x + y + 2z = -3
     // Ответ: x=2, y=3, z=-1
     ab <<  2.0,  1.0, -1.0,  8.0,
-          -3.0, -1.0,  2.0, -11.0,
-          -2.0,  1.0,  2.0, -3.0;
+    -3.0, -1.0,  2.0, -11.0,
+    -2.0,  1.0,  2.0, -3.0;
 
     GaussVector x = Gauss_solve(ab);
 
