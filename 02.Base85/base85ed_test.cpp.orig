@@ -6,7 +6,7 @@
 
 #include "base85ed.h"
 
-static std::vector<uint8_t> cstr2v(const char *s)
+static std::vector<uint8_t> cstr2v(const char* s)
 {
     std::string str(s);
     return std::vector<uint8_t>(str.begin(), str.end());
@@ -62,10 +62,10 @@ TEST(Base85Encode, FourZeros)
 TEST(Base85Encode, PartialBlockSizes)
 {
     for (size_t n = 1; n <= 3; ++n)
-        {
-            std::vector<uint8_t> data(n, 0x42);
-            EXPECT_EQ(base85::encode(data).size(), n + 1);
-        }
+    {
+        std::vector<uint8_t> data(n, 0x42);
+        EXPECT_EQ(base85::encode(data).size(), n + 1);
+    }
 }
 
 // ===========================
@@ -146,31 +146,19 @@ TEST(Base85Decode, ThrowsInvalidChar)
 
 TEST(Base85Roundtrip, VariousData)
 {
-    auto test = [](const std::vector<uint8_t> &d)
+    auto test = [](const std::vector<uint8_t>& d)
     {
         EXPECT_EQ(base85::decode(base85::encode(d)), d);
     };
     test({});
-
     for (size_t len = 1; len <= 20; ++len)
-        {
-            std::vector<uint8_t> d(len);
-
-            for (size_t i = 0; i < len; ++i)
-                {
-                    d[i] = static_cast<uint8_t>(i * 7 + len);
-                }
-
-            test(d);
-        }
-
+    {
+        std::vector<uint8_t> d(len);
+        for (size_t i = 0; i < len; ++i) d[i] = static_cast<uint8_t>(i * 7 + len);
+        test(d);
+    }
     std::vector<uint8_t> all(256);
-
-    for (int i = 0; i < 256; ++i)
-        {
-            all[i] = static_cast<uint8_t>(i);
-        }
-
+    for (int i = 0; i < 256; ++i) all[i] = static_cast<uint8_t>(i);
     test(all);
     std::vector<uint8_t> zeros(4096, 0);
     test(zeros);
