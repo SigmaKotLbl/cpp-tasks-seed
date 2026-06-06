@@ -5,12 +5,12 @@ LDFLAGS = -L../external/lazycsv
 
 release: gauss_solve
 
-gauss_solve: Gauss_solve.o util.o
+gauss_solve: Gauss_main.o Gauss_solve.o util.o
 	$(LD) -o $@ $^ $(LDFLAGS)
 
 debug: gauss_solve_debug
 
-gauss_solve_debug: Gauss_solve.d.o util.d.o
+gauss_solve_debug: Gauss_main.d.o Gauss_solve.d.o util.d.o
 	$(LD) -o $@ $^ $(LDFLAGS)
 
 utest: Gauss_test.d.o Gauss_solve.d.o util.d.o
