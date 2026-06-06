@@ -22,5 +22,6 @@ all: depends run_utest run_itest
 
 include Makefile.hdrdep
 
+
 tidy:
-	clang-tidy *.cpp *.h -- -std=c++17 -I../external/gtest/include
+	../tidy.sh
