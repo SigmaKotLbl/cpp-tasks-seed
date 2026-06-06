@@ -8,10 +8,10 @@
 int main(int argc, const char *argv[])
 {
     if (argc != 2)
-    {
-        std::cerr << "Usage: " << argv[0] << " <input.csv>\n";
-        return 1;
-    }
+        {
+            std::cerr << "Usage: " << argv[0] << " <input.csv>\n";
+            return 1;
+        }
 
     // Загружаем расширенную матрицу [A|b] из CSV
     GaussMatrix ab = load_csv_to_matrix(argv[1]);
@@ -25,10 +25,11 @@ int main(int argc, const char *argv[])
     // Выводим решение в CSV-формате
     std::cout << "X\n";
     std::cout << std::fixed << std::setprecision(6);
+
     for (int i = 0; i < x.size(); ++i)
-    {
-        std::cout << x(i) << "\n";
-    }
+        {
+            std::cout << x(i) << "\n";
+        }
 
     return 0;
 }
