@@ -1,7 +1,7 @@
 include ../Makefile.inc
 
-CXXFLAGS = -std=c++17 -I../external/eigen -I../external/lazycsv/include
-LDFLAGS = -L../external/lazycsv -llazycsv
+CXXFLAGS = -std=c++17 -I../external/eigen -I../external/lazycsv/include/include
+LDFLAGS = -L../external/lazycsv
 
 release: gauss_solve
 
