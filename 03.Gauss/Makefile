@@ -26,3 +26,6 @@ depends:
 	makedepend -f Makefile.hdrdep *.cpp *.h 2>/dev/null || true
 
 include Makefile.hdrdep
+
+run_itest:
+	@echo "Integration tests not implemented, skipping"
