@@ -17,6 +17,3 @@ run_itest : debug
 	./$^
 
 include Makefile.hdrdep
-
-tidy:
-	../tidy.sh
